@@ -18,14 +18,14 @@ class Guessthenum {
 			return false;
 		}
 		else {
-			System.out.println("Number of attempts finished...Better luck next Time\n");
+			System.out.println("Total number of attempts finished...Better luck next Time\n");
 			return true;
 		}
 	}
 	
 	public boolean isCorrectGuess() {
 		if(systemInput == userInput) {
-			System.out.println("Congratulations, you guess the number "+systemInput+" in "+noOfGusses+" guesses");
+			System.out.println("Congratulations, you guessed the number "+systemInput+" in "+noOfGusses+" turns");
 			switch(noOfGusses) {
 			case 1:
 				System.out.println("Your score is 100");
@@ -63,7 +63,7 @@ class Guessthenum {
 		}
 		else if (noOfGusses<10 && userInput > systemInput) {
 			if (userInput - systemInput > 10) {
-				System.out.println("Too High");
+				System.out.println("Way Too High");
 			}
 			else {
 				System.out.println("Little High");
@@ -71,7 +71,7 @@ class Guessthenum {
 		}
 		else if (noOfGusses<10 && userInput < systemInput) {
 			if(systemInput - userInput >10) {
-				System.out.println("Too low");
+				System.out.println("Way Too low");
 			}
 			else {
 				System.out.println("Little Low");
@@ -106,7 +106,7 @@ class Guessthenum {
 			return input;
 		}
 	public static void main(String[] args) {
-		System.out.println("1. Start the game \n2. Exit");
+		System.out.println("1. Start the game... \n2. Exit");
 		System.out.println("Enter your choice: ");
 		int choice = takeIntegerInput(2);
 		int nextRound = 1;
@@ -123,7 +123,7 @@ class Guessthenum {
 					isLimitCross = g.takeUserInput();
 					isMatched = g.isCorrectGuess();
 				}
-				System.out.println("1. Next Round \n2.Exit");
+				System.out.println("1. Next Round-> \n2.Exit");
 				System.out.println("Enter your Choice: ");
 				nextRound = takeIntegerInput(2);
 				if (nextRound != 1) {
